@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style_toggle2.css">
+        <title>Conoce a Ian</title>
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <h1 id="saludo">Mi Portafolio</h1>
+        <button onclick="cambiartema()">Cambiar tema</button>
+        <img id="image-1"src="">
+        <script>
+            function cambiartema(){
+                let cuerpo= document.body;
+                cuerpo.classList.toggle("modo-oscuro");
+
+            }
+            function mi_persona(){
+             let imagen= document.getElementById("image-1");
+             imagen.src="https://media.tenor.com/coC_BFEEIbQAAAAM/finding-find.gif";
+            }
+
+
+
+
+        </script>
+    </body>
+</html>
