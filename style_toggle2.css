@@ -1,19 +1,121 @@
 body{
-    background-color:white;
-    color:black;
-    font-family:sans-serif;
-    transition:0.4s;
-    text-align: center;
-    padding-top: 50px;
+    font-family: Arial, sans-serif; /* Tipografía básica */
+    background-color: #f4f7f6; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
 }
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 20px;
-    border: 2px solid #333; 
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #dddddd;
+}
+h1 {
+    color: #830303; /* Texto Azul */
+}
+img {
+    width: 200px;
+    border-radius: 50%; /* Círculo perfecto */
+    border: 5px solid #790101; /* Borde azul */
 }
 
+.icon
+{
+    max-width: 30px;
+    border-color: #f5f5f5;
+}
+.insta{
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+;  
+}
+
+nav ul {
+    list-style: none; /* Quitamos las viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los links */
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #dddddd;
+}
+nav ul {
+    list-style: none; /* Quitamos las viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los links */
+}
+
+nav a {
+    text-decoration: none; /* Quitamos la línea de abajo del link */
+    color: #333333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0077b6; /* Efecto al pasar el mouse */
+}
+
+
+
+.modo-oscuro header,
+.modo-oscuro section,
+.modo-oscuro footer {
+    background-color: #333333;
+    border-color: #555555;
+}
+
+.modo-oscuro h1, 
+.modo-oscuro nav a:hover {
+    color: #ff0909; 
+}
+
+.modo-oscuro a {
+    color: #ffffff; /* Los links se vuelven blancos en modo oscuro */
+}
+
+main {
+    padding: 40px;
+    display: flex;
+    justify-content: center; 
+}
+section {
+    background-color: #ffffff;
+    width: 600px; /* Ancho fijo para controlar la caja */
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra estilo polaroid */
+    text-align: center;
+}
+button {
+    background-color: #8f0202;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.navbar{
+    background-color: coral;
+    padding: 15px 30px;
+    
+}
 .modo-oscuro {
     background-color:black;
     color:white;
@@ -23,4 +125,24 @@ button {
     border-color:white;
     background-color:black;
     color:white;
+}
+@media(max-width: 768px)
+{
+    header{
+        flex-direction: column;
+        gap: 15 px;
+        padding: 20 px;
+
+    }
+    nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section{
+        width: 90px;
+        padding: 20px;
+    }
+    img {  
+        width: 150px;
+    }
 }
