@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización</title>
+     <link rel="stylesheet" href="estilo.css"> 
+</head>
+<body>
+
+    <button type="button" id="btnDoxear">Boton doxeador</button>
+    
+    <div id="resultado">Esperando ubicación...</div>
+
+    <script>
+        const output = document.getElementById("resultado");
+        const btn = document.getElementById("btnDoxear");
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0,
+        };
+
+        async function obtenerUbicacion(e) {
+            if (e) e.preventDefault();
+            
+            output.innerText = "Verificando permisos...";
+
+            try {
+                if (navigator.permissions) {
+                    const status = await navigator.permissions.query({ name: 'geolocation' });
+                    if (status.state === 'denied') {
+                        output.innerText = "⚠️ Acceso denegado. Actívalo en la configuración del candado de la URL.";
+                        return;
+                    }
+                }
+
+                // 2. Pedir la ubicación
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        const { latitude, longitude, accuracy } = pos.coords;
+                        output.innerHTML = `
+                            <p style="color: green;">✅ ¡Ubicación obtenida!</p>
+                            Latitud: ${latitude}<br>
+                            Longitud: ${longitude}<br>
+                            Precisión: ${accuracy}m
+                        `;
+                    },
+                    (err) => {
+                        output.innerText = `Error (${err.code}): ${err.message}`;
+                    },
+                    options
+                );
+            } catch (error) {
+                output.innerText = "Error al verificar permisos.";
+                console.error(error);
+            }
+        }
+
+        // Usamos un listener en lugar de un onclick en el HTML para mayor estabilidad
+        btn.addEventListener("click", obtenerUbicacion);
+    </script>
+</body>
+</html>

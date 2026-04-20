@@ -1,0 +1,56 @@
+body {
+    background-color: #2b2d42;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#obtenerUbicacion {
+    background-color: #106f08;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 255, 94, 0.866);
+    min-width: 300px;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2b2d42;
+    background-color: #00ffcc; /* Un tono neón para resaltar */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+   animation: flotar 5s ease-in-out infinite;
+}
+ 
+ 
+button:hover {
+    transform: scale(1.05);
+    background-color: #00e6b8;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0px);
+    }
+      50%{
+        transform:translateY(-15px);
+    }
+      100%{
+        transform:translateY(0px);
+    }
+}
